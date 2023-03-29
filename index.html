@@ -17,24 +17,42 @@
     <h1 class="title-text">Deserts</h1>
     <div w3-include-html="text.txt"></div>
     <div class="container">
-        <div class="category" id="category1">
+        <div class="category" id="category_01">
             <p>Icecream</p>
             <p><input type="submit" value="Vanilla" id="vanilla"></p>
             <p><input type="submit" value="Chocolate" id="chocolate"></p>
             <p><input type="submit" value="Strawberry" id="strawberry"></p>
         </div>
-
-
+        <div class="category" id="category_02">
+            <p>Icecream</p>
+            <p><input type="submit" value="Pure" id="pure"></p>
+            <p><input type="submit" value="Sugar" id="sugar"></p>
+            <p><input type="submit" value="Syrup" id="syrup"></p>
+        </div>
+        <div class="category" id="category_03">
+            <p>Icecream</p>
+            <p><input type="submit" value="Coffee" id="coffee"></p>
+            <p><input type="submit" value="Fruit" id="fruit"></p>
+            <p><input type="submit" value="Tea" id="tea"></p>
+        </div>
+        
     </div>
 
-
+    <div id="content">
+        <iframe class="info" src="text.txt" width="80%" height="400px"></iframe>
+    </div>
+    <script>
+        var category;
+        $(".category").click(function(){
+            category = this.id
+        });
+        $("input").click(function(){
+            var button = this.id;
+            console.log(button);
+            $(".info").attr("src", `${category}/${button}/${button}.txt`);
+        });
+    </script>
 
 </div>
-
-    <script>
-
-
-        
-    </script>
 </body>
 </html>
